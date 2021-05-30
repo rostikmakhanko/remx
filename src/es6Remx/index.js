@@ -1,5 +1,7 @@
 module.exports = {
   ...require('./remx'),
   connect: require('./connect').connect,
-  useConnect: require('./useConnect').useConnect
+  observer: require('./observer').observer,
+  useConnect: require('./useConnect').useConnect,
+  setAccessStateStrictMode: require('./globalState').setAccessStateStrictMode
 };

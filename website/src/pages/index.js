@@ -8,32 +8,32 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Easy to Implement',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: 'Easy',
+    imageUrl: '',//TODO: add .svg images in img folder
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Remx is designed from the ground up to be the state meneger
+        for all your websites and apps that&apos;s easy to install and use.
       </>
     ),
   },
   {
     title: 'Zero Boilerplate',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    imageUrl: '',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Remx lets you focus on features, not the chores.
+        Install Remx in your website or app and hit the ground running.
       </>
     ),
   },
   {
-    title: 'Works out of the Box',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'Fast and Reliable',
+    imageUrl: '',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Extend or customize your data management. Remx is
+        reliable and fast to use.
       </>
     ),
   },
@@ -42,7 +42,7 @@ const features = [
 function Feature({imageUrl, title, description}) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={clsx('col col--4', styles.feature)}>
+    <div className={clsx('col col--4', styles.features)}>
       {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
@@ -71,8 +71,8 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/')}>
-              Get Started
+              to={useBaseUrl('docs/introduction/getting-started')}>
+              Getting Started
             </Link>
           </div>
         </div>

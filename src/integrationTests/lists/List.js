@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import { FlatList, Text } from 'react-native';
 
-import { connect } from '../../index';
+import { FlatList, Text } from '../../utils/testUtils';
+
+import { connect, observer } from '../..';
 
 import store from './Store';
+
+const Item = observer((params) => (
+  <Text>
+    {params.item.text}
+  </Text>
+));
 
 class MyList extends Component {
   render() {
@@ -12,17 +19,13 @@ class MyList extends Component {
       <FlatList
         data={this.props.items}
         renderItem={this.renderItem}
-        keyExtractor={(i) => i.id}
+        keyExtractor={(_, i) => i}
       />
     );
   }
 
   renderItem(params) {
-    return (
-      <Text>
-        {params.item.text}
-      </Text>
-    );
+    return <Item {...params} />;
   }
 }
 

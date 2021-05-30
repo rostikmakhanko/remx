@@ -1,5 +1,7 @@
 import React from 'react';
-import { Text } from 'react-native';
+import * as remx from '../es6Remx';
+
+import { Text } from '../utils/testUtils';
 
 const renderText = (txt) => (
   <Text>
@@ -7,11 +9,11 @@ const renderText = (txt) => (
   </Text>
 );
 
-export default (remx) => (props) => {
+export default (props) => {
   const mapStateToProps = props.mapStateToProps ?
     props.mapStateToProps :
     () => ({
-      product: props.store.getters.getProduct('123'),
+      productTitle: props.store.getters.getProduct('123') && props.store.getters.getProduct('123').title,
       dynamicObject: props.store.getters.getDynamicObject(),
       name: props.store.getters.getName()
     });
@@ -26,8 +28,8 @@ export default (remx) => (props) => {
     props.renderSpy();
   }
 
-  if (connectedProps.product) {
-    return renderText(connectedProps.product.title);
+  if (connectedProps.productTitle) {
+    return renderText(connectedProps.productTitle);
   } else if (props.testDynamicObject) {
     /* istanbul ignore next */
     return renderText(

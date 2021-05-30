@@ -7,8 +7,8 @@ slug: /api/useConnect
 
 ### `remx.useConnect(fn, arguments)`
 Hook-style alternative to remx.connect.
-It makes sure, the component is re-rendered on observable values change.
-Second argument (optional) is array of arguments that will be passed to the provided function.
+Assures that the component is re-rendered when observable values change.
+Second argument (optional) is an array of arguments to be passed to the provided function.
 
 ```javascript
 import React, { PureComponent } from 'react';
@@ -21,7 +21,7 @@ const SomeComponent = (props) => {
   return (
     <div>{selectedPostTitle}</div>
   );
-}
+};
 
 const useSomeComponentConnect = (props) => useConnect(() => ({
   selectedPostTitle: store.getPostById(props.selectedPostId);
@@ -39,7 +39,7 @@ const SomeComponent = (props) => {
   return (
     <div>{selectedPostTitle}</div>
   );
-}
+};
 ```
 
 Note that accessing props outside of mapStateToProps won't be tracked and may cause issues with
@@ -55,7 +55,7 @@ const ProductPriceComponent = (props) => {
   return (
     <div>Price: {product.price} USD</div>
   );
-}
+};
 
 // Good:
 const ProductPriceComponent = (props) => {
@@ -66,5 +66,5 @@ const ProductPriceComponent = (props) => {
   return (
     <div>Price: {price} USD</div>
   );
-}
+};
 ```

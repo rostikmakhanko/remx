@@ -1,13 +1,13 @@
 ---
 id: connect
-title: connect
-sidebar_label: connect
+title: connect [DEPRECATED]
+sidebar_label: connect [DEPRECATED]
 slug: /api/connect
 ---
 
 ### `remx.connect(mapStateToProps)(MyComponent)`
 Connects a react component to the state.
-This function can optionally take a mapStateToProps function, for mapping the state into props.
+This function can optionally take a mapStateToProps function for mapping the state into props.
 in `someComponent.js`:
 
 ```javascript

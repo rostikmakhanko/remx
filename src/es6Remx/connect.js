@@ -1,13 +1,18 @@
 import isFunction from 'lodash.isfunction';
 import React from 'react';
-import { observer } from 'mobx-react/custom'; // should import from mobx-react/custom when they fix issue #319
+import { observer } from './observer';
 import * as Logger from './logger';
+import { warnOnceWithCode } from '../utils/console';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
 const connect = (mapStateToProps) => {
   if (isFunction(mapStateToProps)) {
     return wrapWithObserverHigherOrderComponent(mapStateToProps);
   }
+  warnOnceWithCode(
+    'connect-without-mapstatetoprops',
+    '[remx] connect()(component) is deprecated, use observer(component) instead'
+  );
   return observer;
 };
 
